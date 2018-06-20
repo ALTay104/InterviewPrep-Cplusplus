@@ -22,6 +22,25 @@ void dec2binary(int decimalNo)
 	cout << endl;
 }
 
+//Another option using BITWISE operator 
+void dec2binaryBitWise(int decimalNo)
+{
+	for (int i = 4; i >= 0; i--)
+	{
+		int k = decimalNo >> i;
+		
+		if (k & 1) 
+		{ 
+			cout << "1"; 
+		}
+		else
+		{
+			cout << "0";
+		}
+	}
+	cout << endl;
+}
+
 int main()
 {
 	int decimalNo; 
