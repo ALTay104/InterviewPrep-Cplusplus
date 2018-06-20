@@ -1,0 +1,34 @@
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+
+void dec2binary(int decimalNo)
+{
+	int resultBinary[1000];
+
+	int counter = 0; 
+	while (decimalNo > 0)
+	{
+		resultBinary[counter] = decimalNo % 2; //remainder is either 0 or 1
+		decimalNo = decimalNo / 2; //dividing 2
+		counter++;
+	}
+
+	//need to print in reverse order. start from last item in array
+	for (int i = counter - 1; i >= 0; i--)
+	{
+		cout << resultBinary[i];
+	}
+	cout << endl;
+}
+
+int main()
+{
+	int decimalNo; 
+	cout << "Enter a decimal number: ";
+	cin >> decimalNo;
+
+	dec2binary(decimalNo);
+
+	return 0;
+}
